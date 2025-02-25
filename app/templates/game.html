@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Hangman Game</h1>
+
+    <!-- Form to enter username and start a new game -->
+    <div id="start-game-section">
+        <form id="start-game-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="button" id="start-game-button">Start New Game</button>
+        </form>
+    </div>
+
+    <div id="game-info">
+        <p>Game ID: <span id="game-id">Not Available</span></p>
+        <p>Score: <span id="score">0</span></p>
+
+        {% if won %}
+            <div class="game-message won">Congratulations! You won!<br>The word was: {{ word }}</div>
+        {% elif lost %}
+            <div class="game-message lost">Game Over! You lost!<br>The word was: {{ word }}</div>
+        {% else %}
+            {% if hint %}
+                <div id="hint" class="game-hint">Hint: {{ hint }}</div>
+            {% endif %}
+            
+            <div id="word-container" class="game-stat">
+                <span class="label">Word:</span> 
+                <span id="word-display">
+                    {% for letter in word %}
+                        {% if letter in guessed %}
+                            <span class="letter">{{ letter }}</span>
+                        {% else %}
+                            <span class="letter">_</span>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+            
+            <div id="wrong-guesses-container" class="game-stat">
+                <span class="label">Wrong guesses:</span>
+                <span id="wrong-guesses">{{ wrong_guesses|join(', ') }}</span>
+            </div>
+            
+            <div id="attempts-container" class="game-stat">
+                <span class="label">Attempts remaining:</span>
+                <span id="attempts">{{ attempts }}</span>
+            </div>
+            
+            <!-- Hangman Drawing -->
+            <div id="hangman-ascii">  </div>
+            <div class="letter-buttons">
+                {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+                    {% if letter not in guessed and letter not in wrong_guesses %}
+                        <button class="letter letter-button" data-letter="{{ letter }}">{{ letter }}</button>
+                    {% elif letter in guessed %}
+                        <button class="letter correct" type="button" disabled>{{ letter }}</button>
+                    {% else %}
+                        <button class="letter incorrect" type="button" disabled>{{ letter }}</button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+            <button type="button" id="get-hint">Get Hint (-1 point)</button>
+            <button type="button" id="skip-word">Skip Word</button>
+            <button type="button" id="extra-life">Extra Life (-2 points)</button>
+        {% endif %}
+    </div>
+    <div id="get-results">
+        <form action="{{ url_for('results') }}" method="get">
+            <!-- Hidden input to hold the game_id value -->
+            <button type="submit">See Results</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+</div>
+{% endblock %}
