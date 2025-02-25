@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" type="text/css" href="static/game-styles.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
+    <script src="static/hangman.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="static/navigation.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    {% include 'navigation.html' %}
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
