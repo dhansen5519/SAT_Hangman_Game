@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAT Hangman Game Results</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="static/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="static/results.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+    />
+</head>
+<body>
+    {% include 'navigation.html' %}
+    <div id="results">
+        <div class="container">
+            <h1>Game Results</h1>
+            <div class="game-info">
+                {% if game_id %}
+                <p>Game ID: {{ game_id }}</p>
+                <p>Score: {{ score }}</p>
+                <h2>Words Seen in the Game:</h2>
+                <div class="words">
+                    {% for word in words %}
+                        <p>{{ word['word'] }}</p>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No recent game found.</p>
+            {% endif %}
+            </div>
+            <a href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>
