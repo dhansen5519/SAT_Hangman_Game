@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#rules h1 {
+  margin-bottom: 50px;
+}
+#rules .container {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  min-height: 400px;
+}
+#rules ul li {
+  text-align: left;
+}
