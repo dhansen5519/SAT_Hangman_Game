@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#statistics h1 {
+  margin-bottom: 50px;
+}
+#statistics .container {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  min-height: 400px;
+}
+#statistics .stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+#statistics .stats p {
+  text-align: left;
+  background: #ccc;
+  padding: 15px;
+  margin: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+#statistics .stats p.orange {
+  background: orange;
+}
+#statistics .stats p.green {
+  background: #28a745;
+}
+#statistics .stats p.red {
+  background: #dc3545;
+}
+#statistics .stats p.blue {
+  background: #007bff;
+}
