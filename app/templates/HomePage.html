@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Hangman SAT Word Game Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" type="text/css" href="static/navigation.css" />
+  <link rel="stylesheet" type="text/css" href="static/home.css" />
+
+</head>
+<body>
+    {% include 'navigation.html' %}
+    <div class="container">
+        <h1>Hangman SAT Word Game</h1>
+        <p>Studying for the SAT is tough. Our goal is to help students study vocabulary using the fun and easy to understand game of Hangman.</p>
+        <h2>Leaderboard</h2>
+        <div class="table-container">
+            <div class="leaderboard">
+                {% for game in leaderboard %}
+                <div class="entry">
+                    <span class="user">{{ game.user }}</span>
+                    <span class="dots"></span>
+                    <span class="score">{{ game.high_score }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="{{url_for('game')}}"><button class="play-game-button">Play Game</button></a>
+        </div>
+    </div>
+</body>
