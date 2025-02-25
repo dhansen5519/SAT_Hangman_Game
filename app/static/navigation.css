@@ -1,0 +1,40 @@
+nav {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+nav a.logo {
+  float: left;
+  margin: 0 30px;
+  text-decoration: none;
+  color: #000;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+@media (max-width: 750px) {
+  nav li {
+    display: block;
+  }
+  nav a.logo {
+    float: none;
+    margin-left: 0;
+  }
+}
