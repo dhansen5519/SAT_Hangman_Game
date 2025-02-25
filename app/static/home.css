@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+h1 {
+    text-align: center;
+    font-size: 5vh;
+    margin: 2vh 0;
+    flex-shrink: 0;
+}
+.leaderboard {
+    width: 90%;
+    /*max-width: 500px; */
+    border: 2px solid black;
+}
+.entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 4vh;
+    width: 100%;
+}
+.name {
+    text-align: left;
+}
+.score {
+    text-align: right;
+}
+.dots {
+    flex: 1;
+    height: 1em;
+    margin: 0 0.5em;
+    border-bottom: 1px dotted black;
+}
+.table-container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.container {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 90%; /* Adjust this value to control the overall width */
+max-width: 1200px; /* Maximum width of the container */
+margin: 0 auto; /* Center the container */
+padding: 20px;
+background-color: white;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+box-sizing: border-box;
+}
+.play-game-button {
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+}
+a:link {
+   text-decoration: none;
+}
