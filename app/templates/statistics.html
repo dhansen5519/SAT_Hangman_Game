@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <title>Hangman SAT Word Game Statistics</title>
+  <link rel="stylesheet" type="text/css" href="static/styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" type="text/css" href="static/navigation.css" />
+  <link rel="stylesheet" type="text/css" href="static/statistics.css" />
+</head>
+<body>
+  {% include 'navigation.html' %}
+  <div id="statistics">
+    <div class="container">
+      <h1>Statistics</h1>
+      <div class="stats">
+        <p class="orange">Number of words available: {{stats['word_count']}}</p>
+        <p class="green">Number of games played: {{stats['game_count']}}</p>
+        <p class="red">Average Game Score: {{stats['avg_score']}}</p>
+        <p class="blue">Highest Score: {{stats['max_score']}}</p>
+        <p class="orange">Lowest Score: {{stats['min_score']}}</p>
+        <p class="green">
+          Most common word solved in a game: {{stats['word_common']}}
+        </p>
+        <p class="red">
+          User who has played the most games: {{stats['most_games']}}
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
