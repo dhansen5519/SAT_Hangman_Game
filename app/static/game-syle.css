@@ -1,0 +1,159 @@
+/* static/game-styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#username:disabled {
+    background-color: yellow; /* Light blue background */
+    font-weight: bold;        /* Bold text */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+#game-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.game-stat {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.game-message {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.won {
+    color: green;
+}
+
+.lost {
+    color: red;
+}
+
+#hint {
+    font-style: italic;
+    color: #666;
+}
+
+#hangman-ascii {
+    font-family: monospace;
+    white-space: pre;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#game-info {
+    visibility: hidden;
+}
+
+#start-game-section {
+    display: block; /* Show start-game-section initially */
+}
+
+.letter-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button.letter {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+
+button.letter.correct {
+    background-color: green;
+    color: white;
+}
+
+button.letter.incorrect {
+    background-color: orange;
+    color: white;
+}
+
+button.letter:disabled {
+    cursor: not-allowed;
+}
+
+button.letter:not(.correct):not(.incorrect):hover {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+.game-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-modal .content {
+    text-align: center;
+}
+
+.play-again {
+    margin-top: 10px;
+}
+
+.hangman-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hangman-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hangman-part.show {
+    opacity: 1;
+}
+
+.show {
+    opacity: 1;
+}
+
+#get-results {
+    display:none;
+}
