@@ -1,0 +1,94 @@
+# Pseudocode for Hangman Game with SAT Words
+
+# Initialize the game
+function initializeGame():
+    wordList = [{"word": "aberration", "definition": "a departure from what is normal or expected"}{etc}]
+    selectedEntry = selectRandomWord(wordList)
+    selectedWord = selectedEntry["word"]
+    definition = selectedEntry["definition"]
+    maskedWord = maskWord(selectedWord)
+    maxAttempts = 6
+    attemptsLeft = maxAttempts
+    score = getScore()
+    guessedLetters = []
+
+# Select a random word from the list
+function selectRandomWord(wordList):
+    return wordList[randomIndex(0, length(wordList) - 1)]
+
+# Mask the selected word with underscores
+function maskWord(word):
+    masked = ""
+    for each character in word:
+        masked += "_"
+    return masked
+
+# Main game loop
+function playGame():
+    initializeGame()
+    while attemptsLeft > 0 and maskedWord != selectedWord:
+        displayGameState(maskedWord, attemptsLeft, guessedLetters, definition, hangmanVisual)
+        guess = getUserGuess()
+        
+        if guess in guessedLetters:
+            print("You already guessed that letter.")
+            continue
+
+        guessedLetters.append(guess)
+
+        if guess in selectedWord:
+            updateMaskedWord(selectedWord, maskedWord, guess)
+            updateVisualization()
+            score += 10
+        else:
+            updateVisualization()
+            attemptsLeft -= 1
+            score -= 5
+
+        if attemptsLeft == 0:
+            print("Game Over! The word was: " + selectedWord)
+            break
+
+        if maskedWord == selectedWord:
+            score += 20
+            print("Congratulations! You guessed the word: " + selectedWord)
+            print("Would you like another word?")
+            reponse = getResponse()
+            if response == Yes:
+                initializeGame()
+            if response == No:
+                break
+
+    displayFinalScore(score)
+    score = 0
+
+# Update the masked word based on the correct guess
+function updateMaskedWord(selectedWord, maskedWord, guess):
+    for i from 0 to length(selectedWord) - 1:
+        if selectedWord[i] == guess:
+            maskedWord[i] = guess
+
+# Display the current state of the game with visualization and definition
+function displayGameState(maskedWord, attemptsLeft, guessedLetters, definition, hangmanVisual):
+    Implement Visualization
+
+# Update hangman visualization to match current game state
+updateVisualization():
+    Add to hangman image
+    Update displayed word with new guess if correct
+    Update attempt count
+
+# Get the user's guess
+function getUserGuess():
+    return getInput("Enter a letter: ")
+
+# Get the user's response
+function getResponse():
+    return getInput("Y/N: ")
+
+# Display the final score
+function displayFinalScore(score):
+    print("Your final score is: " + score)
+
+# Start the game
+playGame()
