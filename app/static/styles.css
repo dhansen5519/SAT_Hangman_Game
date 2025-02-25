@@ -1,0 +1,287 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  height: 100vh;}
+
+.table-container {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.play-game-button {
+  display: block;
+  margin: 20px auto; 
+}
+.leaderboard {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+.leaderboard th, .leaderboard td {
+  padding: 8px;
+  text-align: center;
+}
+.leaderboard th {
+  background-color: #f2f2f2;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Header */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Word Display */
+.word {
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* Input Field */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Primary Button */
+.button-primary {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary Button */
+.button-secondary {
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Success Button */
+.button-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.button-success:hover {
+    background-color: #218838;
+}
+
+/* Danger Button */
+.button-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
+/* Warning Button */
+.button-warning {
+    color: #fff;
+    background-color: #ffc107;
+}
+
+.button-warning:hover {
+    background-color: #e0a800;
+}
+
+/* Messages */
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.hangman {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: swing 2s infinite;
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hangman-container:hover .hangman {
+    animation: swing-hover 1s infinite;
+}
+
+@keyframes swing-hover {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Hangman Parts */
+.gallow {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #333;
+}
+
+.gallow-top {
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    background-color: #333;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallow-rope {
+    position: absolute;
+    width: 10px;
+    height: 20%;
+    background-color: #333;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.head {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-color: #ccc;
+    border-radius: 50%;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.body {
+    position: absolute;
+    width: 10%;
+    height: 30%;
+    background-color: #ccc;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arm {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    background-color: #ccc;
+}
+
+.arm-left {
+    top: 50%;
+    left: 30%;
+    transform: rotate(-45deg);
+}
+
+.arm-right {
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg);
+}
+
+.leg {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    background-color: #ccc;
+}
+
+.leg-left {
+    top: 80%;
+    left: 35%;
+    transform: rotate(45deg);
+}
+
+.leg-right {
+    top: 80%;
+    left: 50%;
+    transform: rotate(-45deg);
+}
+
+/*
+HANGMAN ANIMATIONS ARE PERTINENT TO
+
+        <!-- Hangman Animation -->
+        <div class="hangman-container">
+            <div class="gallow"></div>
+            <div class="gallow-top"></div>
+            <div class="gallow-rope"></div>
+            <div class="hangman">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="arm arm-left"></div>
+                <div class="arm arm-right"></div>
+                <div class="leg leg-left"></div>
+                <div class="leg leg-right"></div>
+            </div>
+        </div>
+
+
+/*
